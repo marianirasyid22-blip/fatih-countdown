@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #05080f;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #006aff;
+    filter: blur(160px);
+    opacity: .18;
+    z-index: -1;
+}
+
+.glow-one {
+    top: 10%;
+    left: -180px;
+}
+
+.glow-two {
+    bottom: 0;
+    right: -180px;
+}
+
+.navbar {
+    padding: 28px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo,
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.logo span,
+.footer-logo span {
+    color: #168bff;
+}
+
+.nav-label {
+    font-family: 'Orbitron', sans-serif;
+    color: #6585a8;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 35px;
+}
+
+.hero {
+    min-height: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.eyebrow {
+    color: #168bff;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: #168bff;
+    text-shadow: 0 0 30px #168bff80;
+}
+
+.subtitle {
+    color: #8190a5;
+    font-size: 13px;
+    margin-top: 22px;
+    line-height: 1.8;
+}
+
+.date-label {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #6bb4ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.date-line {
+    width: 30px;
+    height: 1px;
+    background: #168bff;
+}
+
+.visual {
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 900px;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid #168bff60;
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 320px;
+    height: 320px;
+    transform: rotateX(65deg);
+    animation: orbit 9s linear infinite;
+}
+
+.orbit-two {
+    width: 270px;
+    height: 270px;
+    transform: rotateY(65deg);
+    animation: orbit 7s linear infinite reverse;
+}
+
+.orbit-three {
+    width: 220px;
+    height: 220px;
+    border-color: #168bff35;
+    animation: orbit 12s linear infinite;
+}
+
+.cube {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cubeRotate 9s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #087bff, #04132c);
+    border: 2px solid #55aeff;
+    box-shadow: inset 0 0 25px #168bff70,
+        0 0 25px #168bff40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.front {
+    transform: translateZ(60px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(60px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(60px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(60px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(60px);
+    font-size: 17px;
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(60px);
+    font-size: 17px;
+}
+
+.visual-caption {
+    position: absolute;
+    bottom: -10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #168bff;
+}
+
+.countdown-section {
+    text-align: center;
+    margin: 35px 0 85px;
+    padding: 45px 20px;
+    border: 1px solid #14345a;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #0c1727, #070c15);
+    box-shadow: 0 20px 60px #0008,
+        inset 0 0 35px #168bff0c;
+}
+
+.countdown-heading {
+    color: #6dafff;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 35px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 750px;
+    margin: auto;
+}
+
+.time-card {
+    padding: 25px 10px;
+    border: 1px solid #1a4779;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #102846, #080f1a);
+    box-shadow: 0 10px 25px #0008,
+        inset 0 0 20px #168bff18;
+    transform: perspective(700px) rotateX(4deg);
+    transition: .3s;
+}
+
+.time-card:hover {
+    transform: perspective(700px) rotateX(0) translateY(-8px);
+    border-color: #168bff;
+    box-shadow: 0 15px 35px #168bff30;
+}
+
+.time-card span {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    color: #4aa5ff;
+    text-shadow: 0 0 20px #168bff80;
+}
+
+.time-card p {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #829bb8;
+    margin-top: 12px;
+}
+
+.birthday-message {
+    color: #168bff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 35px;
+}
+
+footer {
+    border-top: 1px solid #16283e;
+    padding: 35px 10px;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 9px;
+    color: #53667e;
+    letter-spacing: 3px;
+}
+
+@keyframes cubeRotate {
+    from {
+        transform: rotateX(0) rotateY(0);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes orbit {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        padding: 22px 6%;
+    }
+
+    .nav-label {
+        font-size: 8px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 65px;
+    }
+
+    .date-label {
+        justify-content: center;
+    }
+
+    .visual {
+        transform: scale(.85);
+        margin: -10px 0;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-section {
+        margin-top: 30px;
+    }
+}
